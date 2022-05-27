@@ -17,15 +17,18 @@ class Red extends Main {
 }
 class Green extends Main {
     constructor(){
-        this._color = "red"
+        this._color = "green"
     }
 }
 class Blue extends Main {
     constructor(){
-        this._color = "red"
+        this._color = "blue"
     }
 }
 
 module.exports = {
-    Main
+    Main,
+    Red,
+    Green,
+    Blue
 }
