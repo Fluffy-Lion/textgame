@@ -1,5 +1,5 @@
 const character = require('./characters')
-const { greeting, color } = require('./interactions')
+const { greeting, color, game } = require('./interactions')
 
 // const leon = new character.Main("leon")
 // console.log(leon)
@@ -15,4 +15,5 @@ const start = async () => {
 const text1 = () => {
     console.log(`hello ${player.name}`)
 }
-start()
+// start()
+game()
