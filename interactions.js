@@ -1,5 +1,6 @@
 const character = require('./characters')
 const inquirer = require("inquirer");
+const ListPrompt = require('inquirer/lib/prompts/list');
 const color = async (name) => {
    const answer = await inquirer.prompt({
         name: "colorSelection",
@@ -29,7 +30,20 @@ const game = () => {
   }
   return option
 }
+const gameQuestion = async () => {
+  const answer = await inquirer.prompt([{
+    name: "userSelection",
+    type: 'list',
+    message: "rock, paper or scissors?",
+    choices: ['rock', 'paper', 'scissors']
+
+  }]).then(answer => {
+     console.log(answer.userSelection)
+  })
+}
 module.exports = {
   greeting,
-  color, game
+  color, 
+  game,
+  gameQuestion
 };

@@ -29,13 +29,16 @@ describe("game function", () => {
         }
         return arr
     }
-    test("returns a string", () => {
+    test("returns scissor in array", () => {
         expect(arrayGen()).toContain("scissors")
     })
-    test("returns a string", () => {
+    test("returns rock in array", () => {
         expect(arrayGen()).toContain("rock")
     })
-    test("returns a string", () => {
+    test("returns rock in array", () => {
         expect(arrayGen()).toContain("paper")
+    })
+    test("does not return plane", () => {
+        expect(arrayGen()).not.toContain("plane")
     })
 })
