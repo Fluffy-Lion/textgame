@@ -1,10 +1,11 @@
-let { rand } = require('../funcs')
-let { game } = require('../interactions')
+const inquirer = require('inquirer')
+let { rand, game } = require('../funcs')
+let { gameQuestion } = require('../interactions')
 
 describe("rand function test", () => {
     let arrayGen = () => {
         let arr = []
-        for(let i = 0; i < 10; i++){
+        for (let i = 0; i < 10; i++) {
             let num = rand()
             arr.push(num)
         }
@@ -23,7 +24,7 @@ describe("rand function test", () => {
 describe("game function", () => {
     let arrayGen = () => {
         let arr = []
-        for(let i = 0; i < 10; i++){
+        for (let i = 0; i < 100; i++) {
             let option = game()
             arr.push(option)
         }
@@ -41,4 +42,9 @@ describe("game function", () => {
     test("does not return plane", () => {
         expect(arrayGen()).not.toContain("plane")
     })
+})
+
+// jest.mock('inquirer')
+describe("game interaction", () => {
+
 })
